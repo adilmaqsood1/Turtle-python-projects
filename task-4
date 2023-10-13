@@ -1,0 +1,30 @@
+import turtle as tur
+import colorsys as cs
+tur.setup(700,700)
+tur.bgcolor('black')
+tur.tracer(500)
+
+def draw():
+    h = 0
+    for i in range(100):
+        c = cs.hsv_to_rgb(h, 1, 1)
+        h += 0.01
+        tur.up()
+        tur.goto(0, 0)
+        tur.down()
+        tur.color('black')
+        tur.fillcolor(c)
+        tur.begin_fill()
+        tur.rt(98)
+        tur.circle(i, 12)
+        tur.fd(290)
+        tur.fd(i)
+        tur.lt(29)
+        for j in range(129):
+            tur.fd(i)
+            tur.circle(j, 299, steps=2)
+        tur.end_fill()
+
+draw()
+tur.update()
+tur.done()
